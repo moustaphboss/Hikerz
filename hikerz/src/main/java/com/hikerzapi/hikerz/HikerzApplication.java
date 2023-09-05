@@ -10,4 +10,5 @@ public class HikerzApplication {
 		SpringApplication.run(HikerzApplication.class, args);
 	}
 
+
 }

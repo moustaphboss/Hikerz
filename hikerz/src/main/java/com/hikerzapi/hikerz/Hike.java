@@ -17,6 +17,7 @@ import java.util.List;
 public class Hike {
     @Id
     private ObjectId id;
+    private String hikeId;
     private String title;
     private String publishDate;
     private String videoLink;

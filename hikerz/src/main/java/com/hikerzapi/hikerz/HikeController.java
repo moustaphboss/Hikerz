@@ -22,8 +22,8 @@ public class HikeController {
         return new ResponseEntity<List<Hike>>(hikeService.allHikes(), HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Optional<Hike>> getHike(@PathVariable ObjectId id) {
-        return new ResponseEntity<Optional<Hike>>(hikeService.singleHike(id), HttpStatus.OK);
+    @GetMapping("/{hikeId}")
+    public ResponseEntity<Optional<Hike>> getHike(@PathVariable String hikeId) {
+        return new ResponseEntity<Optional<Hike>>(hikeService.singleHike(hikeId), HttpStatus.OK);
     }
 }

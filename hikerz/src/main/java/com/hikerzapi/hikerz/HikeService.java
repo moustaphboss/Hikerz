@@ -15,7 +15,7 @@ public class HikeService {
         return hikeRepository.findAll();
     }
 
-    public Optional<Hike> singleHike(ObjectId id) {
-        return hikeRepository.findById(id);
+    public Optional<Hike> singleHike(String hikeId) {
+        return hikeRepository.findHikeByHikeId(hikeId);
     }
 }

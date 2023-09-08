@@ -1,7 +1,7 @@
-import React from 'react'
-import './Hero.css'
-import Carousel from 'react-material-ui-carousel'
 import { Paper } from '@mui/material'
+import React from 'react'
+import Carousel from 'react-material-ui-carousel'
+import './Hero.css'
 
 const Hero = ({hikes}) => {
   return (
@@ -12,7 +12,7 @@ const Hero = ({hikes}) => {
                     return(
                         <Paper>
                             <div className='hike-card-container'>
-                                <div className='hike-card'>
+                                <div className='hike-card' style={{"--img": 'url()'}}>
                                     <div className='hike-detail'>
                                         <div className='hike-poster'>
                                             <img src={hike.mainImage} alt=""/>

@@ -12,7 +12,7 @@ const Hero = ({hikes}) => {
                     return(
                         <Paper>
                             <div className='hike-card-container'>
-                                <div className='hike-card' style={{"--img": 'url()'}}>
+                                <div className='hike-card' style={{"--img": `url(${hike.extraImages[0]})`}}>
                                     <div className='hike-detail'>
                                         <div className='hike-poster'>
                                             <img src={hike.mainImage} alt=""/>

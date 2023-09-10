@@ -11,7 +11,7 @@ const Reviews = ({getHikeData, hike, reviews, setReviews}) => {
 
     useEffect(() => {
       getHikeData(hikeId);
-    }, [])
+    }, []);
     
     const addReview = async (e) => {
         e.preventDefault();
@@ -19,11 +19,11 @@ const Reviews = ({getHikeData, hike, reviews, setReviews}) => {
 
         try {
             const response = await api.post("/api/reviews", {reviewBody: rev.value, hikeId: hikeId});
-
-            const updateReview = [...reviews, {body:rev.value}];
+            
+            const updatedReview = [...reviews, {body:rev.value}];
 
             rev.value = "";
-            setReviews(updateReview);
+            setReviews(updatedReview);
         } catch (err) {
             console.log(err);
         }
@@ -49,6 +49,9 @@ const Reviews = ({getHikeData, hike, reviews, setReviews}) => {
                             </Row>
                         </>
                     }
+
+                    {console.log(reviews)
+                    }
                     {
                         reviews?.map((r) => {
                             return(
@@ -56,6 +59,7 @@ const Reviews = ({getHikeData, hike, reviews, setReviews}) => {
                                     <Row>
                                         <Col>{r.body}</Col>
                                     </Row>
+                                    <hr/>
                                 </>
                             )
                         })

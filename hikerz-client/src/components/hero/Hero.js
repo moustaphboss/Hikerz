@@ -28,7 +28,7 @@ const Hero = ({hikes}) => {
                                             <img src={hike.mainImage} alt=""/>
                                         </div>
                                         <div className='hike-title'>
-                                            <h1>{hike.title}</h1>
+                                            <h1 style={{margin: "20px", textAlign: "center"}}>{hike.title}</h1>
                                         </div>
                                         <div className='hike-buttons-container'>
                                             <Link to={`/Trailer/${hike.videoLink.substring(hike.videoLink.length - 11)}`}>

@@ -12,13 +12,12 @@ function App() {
   const [hikes, setHikes] = useState([]);
   const [hike, setHike] = useState();
   const [reviews, setReviews] = useState([])
-  console.log("Starting up");
 
   const getHikes = async () => {
     try {
       const response = await api.get("/api/hikes");
       
-      console.log(response.data);
+      // console.log(response.data);
       setHikes(response.data);
     } catch (error) {
       console.log(error);
@@ -28,8 +27,11 @@ function App() {
   const getHikeData = async (hikeId) => {
     try {
       const response = await api.get(`/api/hikes/${hikeId}`)
+      const singleHike = response.data;
+      setHike(singleHike);
+      setReviews(singleHike.reviewIds);
     } catch (error) {
-      
+      console.log(error);
     }
   }
 
@@ -43,6 +45,8 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Layout/>}>
+          {//console.log(reviews)
+          }
           <Route path="/" element={<Home hikes={hikes}/>}></Route>
           <Route path="/Trailer/:videoLink" element={<Trailer/>}></Route>
           <Route path="/Reviews/:hikeId" element={<Reviews getHikeData={getHikeData} hike={hike} reviews={reviews} setReviews={setReviews}/>}></Route>
